@@ -4,20 +4,20 @@
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/isamm</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tp3hibernate</property>
 		<property name="hibernate.connection.username">hamza</property>
 		<property name="hibernate.connection.passsword">hamza</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<mapping class="com.tn.isamm.entity.Personne"/>
-		<mapping class="com.tn.isamm.entity.Etudiant"/>
-		<mapping class="com.tn.isamm.entity.Formateur"/>
-		<mapping class="com.tn.isamm.entity.Matiere"/>
-		<mapping class="com.tn.isamm.entity.Filiere"/>
-		<mapping class="com.tn.isamm.entity.LigneMatiereFiliere"/>
+		<mapping class="com.tn.isamm.project.beans.Personne"/>
+		<mapping class="com.tn.isamm.project.beans.Etudiant"/>
+		<mapping class="com.tn.isamm.project.beans.Formateur"/>
+		<mapping class="com.tn.isamm.project.beans.Matiere"/>
+		<mapping class="com.tn.isamm.project.beans.Filiere"/>
+		<mapping class="com.tn.isamm.project.beans.LigneMatiereFiliere"/>
 		
 	</session-factory>
 </hibernate-configuration>

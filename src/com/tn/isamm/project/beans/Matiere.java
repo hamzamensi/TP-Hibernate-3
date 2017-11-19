@@ -1,5 +1,6 @@
-package com.tn.isamm.entity;
+package com.tn.isamm.project.beans;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -23,22 +24,17 @@ public class Matiere {
 	private String code;
 	private String libelle;
 	@ManyToOne
-	private Formateur formateur;
-	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinTable(name = "filierematiere", joinColumns = @JoinColumn(name = "id_m", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "id_f", referencedColumnName = "id"))
-	private Set<Filiere> filieres;
+	private Formateur formateurs;
+    @OneToMany(mappedBy = "matiere", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<LigneMatiereFiliere> filieres;
 	
 	public Matiere(String code, String libelle) {
 		this.code = code;
 		this.libelle = libelle;
+		this.filieres = new HashSet<LigneMatiereFiliere>();
 	}
 	
-	public Matiere(String code, String libelle, Formateur formateur) {
-		super();
-		this.code = code;
-		this.libelle = libelle;
-		this.formateur = formateur;
-	}
+	
 
 	public int getId() {
 		return id;
@@ -59,13 +55,37 @@ public class Matiere {
 		this.libelle = libelle;
 	}
 
-	public Formateur getFormateur() {
-		return formateur;
+	public Formateur getFormateurs() {
+		return formateurs;
 	}
 
-	public void setFormateur(Formateur formateur) {
-		this.formateur = formateur;
+
+
+	public void setFormateurs(Formateur formateurs) {
+		this.formateurs = formateurs;
 	}
+
+
+
+	public Set<LigneMatiereFiliere> getFilieres() {
+		return filieres;
+	}
+
+
+
+	public void setFilieres(Set<LigneMatiereFiliere> filieres) {
+		this.filieres = filieres;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Matiere [id=" + id + ", code=" + code + ", libelle=" + libelle
+				+ "]";
+	}
+
+	
 	
 	
 

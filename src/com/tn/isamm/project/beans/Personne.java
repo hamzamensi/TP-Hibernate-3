@@ -1,4 +1,4 @@
-package com.tn.isamm.entity;
+package com.tn.isamm.project.beans;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

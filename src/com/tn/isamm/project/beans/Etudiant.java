@@ -1,4 +1,4 @@
-package com.tn.isamm.entity;
+package com.tn.isamm.project.beans;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -36,5 +36,17 @@ public class Etudiant extends Personne {
 		public void setCne(String cne) {
 			this.cne = cne;
 		}
+
+
+
+		@Override
+		public String toString() {
+			return "Etudiant [cne=" + cne + ", getId()=" + getId()
+					+ ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom()
+					+ ", getTelephone()=" + getTelephone() + ", getEmail()="
+					+ getEmail() + ", getSexe()=" + getSexe() + "]";
+		}
+		
+		
 		
 }
